@@ -9,7 +9,8 @@ class SignupForm(UserCreationForm):
 
 
 class LoginForm(AuthenticationForm):
-    name='login'
+    name = 'login'
+
     class Meta:
         model = User
         fields = ('username', 'password',)
