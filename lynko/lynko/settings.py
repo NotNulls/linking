@@ -29,7 +29,9 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "accounts.User"
 
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = "/"
+
+LOGIN_REDIRECT_URL = "/"
 
 # Application definition
 

@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Links
+{% endblock %}
+
+{% block content %}
+ <h1 class="mb-6 text-xl" style="font-weight: bold;">Links</h1>
+    {% for category in request.categories.all %}
+         <a href="{% url 'links:links' %}?category={{ category.id }}">{{ category.name }}</a>
+    {% endfor %}
+    {% for link in links %}
+    <div class="grid grid-cols3 gap3">
+
+        <h2 class="mb-4 text-xl">{{ link.name }}</h2>
+        {% if link.description %}
+        <p class="mb-4 text-xs">{{ link.description }}</p>
+        {% endif %}
+        <a href="{{ link.url }}" class="text-cyan-600 mb-6" target="_blank">Open link</a>
+    </div>
+    {% endfor %}
+{% endblock %}
